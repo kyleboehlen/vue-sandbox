@@ -13,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Vue Links</RouterLink>
         <RouterLink to="/about">Sandbox</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
       </nav>
     </div>
   </header>
@@ -37,9 +38,17 @@ nav {
   text-align: center;
   margin-top: 2rem;
 }
+nav a {
+  color: var(--vt-c-white-mute);
+}
+
+nav a:hover {
+  background-color: transparent;
+  font-style: italic;
+}
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--vt-c-indigo);
 }
 
 nav a.router-link-exact-active:hover {
