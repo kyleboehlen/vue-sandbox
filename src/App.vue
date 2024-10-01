@@ -1,6 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import {computed} from "vue";
+const greeting = import.meta.env.VITE_GREETING
+const msg = computed(() => {
+  return `Hello ${greeting}!`
+})
 </script>
 
 <template>
@@ -8,7 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Hello There!" />
+      <HelloWorld :msg=msg />
 
       <nav>
         <RouterLink to="/">Vue Links</RouterLink>
